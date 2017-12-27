@@ -1,11 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:include="clr-namespace:XamlDemo.Include"
              x:Class="XamlDemo.Views.MainPage"
              Title="{Binding Title}">
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="&#xf005;" TextColor="#fde10a" />
+            <Label Text="&#xf005;" TextColor="#fde10a" />
+            <Label Text="&#xf005;" />
+            <Label Text="Reviews" />
+        </StackLayout>
+
+        <Label Text="&#xf11d;&#xf11d; Welcome to Xamarin Forms and Prism!" />
+
+        <Button Text="{x:Static include:FontAwesome.FAHome}"
+                    Grid.Row="1"
+                    FontFamily="FontAwesome"></Button>
+
+        <Button Text="&#xf095; Call"
+                    Grid.Row="2"
+                    FontFamily="FontAwesome"></Button>
+
+        <Label Text="&#xf07a;" FontSize="60" HorizontalOptions="Center"/>
     </StackLayout>
 
 </ContentPage>

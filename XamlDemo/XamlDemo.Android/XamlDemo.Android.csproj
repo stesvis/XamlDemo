@@ -66,10 +66,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Renderers\FontAwesomeButtonRenderer.cs" />
+    <Compile Include="Renderers\FontAwesomeLabelRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\FontAwesomeUtility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\fontawesome.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
