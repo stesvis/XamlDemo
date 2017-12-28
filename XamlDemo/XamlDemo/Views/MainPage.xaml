@@ -7,13 +7,13 @@
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Label Text="&#xf005;" TextColor="#fde10a" />
-            <Label Text="&#xf005;" TextColor="#fde10a" />
-            <Label Text="&#xf005;" />
+            <Label Text="&#xf005;" TextColor="#fde10a" FontFamily="FontAwesome" />
+            <Label Text="&#xf005;" TextColor="#fde10a" FontFamily="FontAwesome" />
+            <Label Text="&#xf005;" FontFamily="FontAwesome" />
             <Label Text="Reviews" />
         </StackLayout>
 
-        <Label Text="&#xf11d;&#xf11d; Welcome to Xamarin Forms and Prism!" />
+        <Label Text="&#xf11d;&#xf11d; Welcome to Xamarin Forms and Prism!" FontFamily="FontAwesome" />
 
         <Button Text="{x:Static include:FontAwesome.FAHome}"
                     Grid.Row="1"
@@ -23,7 +23,7 @@
                     Grid.Row="2"
                     FontFamily="FontAwesome"></Button>
 
-        <Label Text="&#xf07a;" FontSize="60" HorizontalOptions="Center"/>
+        <Label Text="&#xf07a;" FontSize="60" HorizontalOptions="Center" FontFamily="FontAwesome" />
     </StackLayout>
 
 </ContentPage>
