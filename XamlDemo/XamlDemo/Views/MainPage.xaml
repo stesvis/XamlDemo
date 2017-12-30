@@ -19,11 +19,16 @@
                     Grid.Row="1"
                     FontFamily="FontAwesome"></Button>
 
+        <Button Text="Movie Selection Page"
+                    Clicked="OnButtonClicked"
+                    Grid.Row="1"
+                    FontFamily="FontAwesome"></Button> 
+
         <Button Text="&#xf095; Call"
                     Grid.Row="2"
                     FontFamily="FontAwesome"></Button>
 
-        <Label Text="&#xf07a;" FontSize="60" HorizontalOptions="Center" FontFamily="FontAwesome" />
+        <Label Text="&#xf08b;" FontSize="60" HorizontalOptions="Center" FontFamily="FontAwesome" />
     </StackLayout>
 
 </ContentPage>

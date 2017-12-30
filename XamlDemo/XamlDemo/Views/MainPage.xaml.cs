@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 
 namespace XamlDemo.Views
 {
@@ -7,6 +8,13 @@ namespace XamlDemo.Views
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        public async void OnButtonClicked(object sender, EventArgs args)
+        {
+            Button button = (Button)sender;
+            Page movieSelectionPage = (Page)Activator.CreateInstance(typeof(MovieSelectionPage));
+            await Navigation.PushAsync(movieSelectionPage);
         }
     }
 }

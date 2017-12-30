@@ -3,9 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Ninject;assembly=Prism.Ninject.Forms"
              x:Class="XamlDemo.App">
-	<Application.Resources>
+    <Application.Resources>
 
-		<!-- Application resource dictionary -->
+        <!-- Application resource dictionary -->
 
-	</Application.Resources>
+        <ResourceDictionary>
+
+            <!-- Styles -->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="Maroon"/>
+                <Setter Property="BarTextColor" Value="White"/>
+            </Style>
+            <!-- Styles -->
+
+        </ResourceDictionary>
+    </Application.Resources>
 </prism:PrismApplication>

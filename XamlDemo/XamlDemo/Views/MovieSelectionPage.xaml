@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamlDemo.Include"
+             x:Class="XamlDemo.Views.MovieSelectionPage"
+             Title="Movie Selection">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
+                <StackLayout  VerticalOptions="StartAndExpand">
+                    <RelativeLayout>
+                        <BoxView Color="Gray" HeightRequest="150" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+                        <Image Source="https://upload.wikimedia.org/wikipedia/commons/e/e6/Jackie_Chan_Cannes_2012.jpg" HeightRequest="100" WidthRequest="70" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.5, Constant=-35}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=-.5, Constant=100}"/>
+                        <Button BorderRadius="35" x:Name="imageCircleBack" Text="Play Movie" TextColor="White" FontSize="Micro" BackgroundColor="Maroon" HeightRequest="30" WidthRequest="100" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.5, Constant = -50}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=0, Property=Y, Constant=135}" />
+                    </RelativeLayout>
+                    <StackLayout  VerticalOptions="StartAndExpand" Padding="20,0,20,0">
+                        <Label Text="TRON: Legacy" Font="Italic,15" />
+                        <Label Text="2010" Font="Bold,10" />
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                            <Label Text="&#xf005;" TextColor="#fde10a" Font="8" />
+                            <Label Text="&#xf005;" TextColor="#fde10a" Font="8" />
+                            <Label Text="&#xf005;" TextColor="#fde10a" Font="8" />
+                            <Label Text="&#xf005;" TextColor="#fde10a" Font="8" />
+                            <Label Text="&#xf005;" Font="8" />
+                        </StackLayout>
+                        <Label Text="The son of a virtual world designer goes looking for his father and ends up inside the digital world that his father designed. He meets his father's corrupted creation and a unique ally who was born inside the digital world." LineBreakMode="WordWrap" Font="8" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                            <local:CurvedCornersLabel Text=" CAST: " HorizontalTextAlignment="Center" VerticalTextAlignment="Start"  Font="6" HeightRequest="8" CurvedBackgroundColor="#0040ff" TextColor="White" CurvedCornerRadius="2">
+                            </local:CurvedCornersLabel>
+
+                            <Label Text="Jeff Bridges, Garrett Hedlund, Olivia Wilde" Font="6" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                            <local:CurvedCornersLabel Text=" DIRECTOR: " HorizontalTextAlignment="Center" VerticalTextAlignment="Start"  Font="6" HeightRequest="8" CurvedBackgroundColor="#0040ff" TextColor="White" CurvedCornerRadius="2">
+                            </local:CurvedCornersLabel>
+                            <Label Text="Joseph Kosinski" Font="6" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="StartAndExpand" Padding="10,0,10,0">
+                        <Label Text="Actor of the Month" Font="Bold,10" />
+                        <ScrollView Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Padding="0,0,0,10">
+                                <Image Source="https://upload.wikimedia.org/wikipedia/commons/e/e6/Jackie_Chan_Cannes_2012.jpg" HeightRequest="100" WidthRequest="70"/>
+                                <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Burt_Lancaster_-_publicity_1947.JPG/627px-Burt_Lancaster_-_publicity_1947.JPG" HeightRequest="100" WidthRequest="70"/>
+                                <Image Source="https://upload.wikimedia.org/wikipedia/commons/1/13/Circus-Clowns-1922-Poster.jpg" HeightRequest="100" WidthRequest="70"/>
+                                <Image Source="https://upload.wikimedia.org/wikipedia/commons/c/c0/The_Birds_original_poster.jpg" HeightRequest="100" WidthRequest="70"/>
+                            </StackLayout>
+                        </ScrollView>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
