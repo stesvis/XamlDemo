@@ -1,29 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-
-using Android.App;
 using Android.Content;
 using Android.Graphics.Drawables;
-using Android.OS;
-using Android.Runtime;
 using Android.Util;
-using Android.Views;
-using Android.Widget;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using XamlDemo.Include;
 using XamlDemo.Droid;
+using XamlDemo.Include;
 
 [assembly: ExportRenderer(typeof(CurvedCornersLabel), typeof(CurvedCornersLabelRenderer))]
+
 namespace XamlDemo.Droid
 {
     public class CurvedCornersLabelRenderer : LabelRenderer
     {
-
-
         private GradientDrawable _gradientBackground;
 
         public CurvedCornersLabelRenderer(Context context) : base(context)

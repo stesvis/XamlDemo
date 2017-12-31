@@ -1,8 +1,8 @@
 ﻿using Android.Content;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using XamlDemo.Droid.Utilities;
 using XamlDemo.Droid.Renderers;
+using XamlDemo.Droid.Utilities;
 
 [assembly: ExportRenderer(typeof(Button), typeof(FontAwesomeButtonRenderer))]
 

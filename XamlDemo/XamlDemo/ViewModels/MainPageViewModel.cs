@@ -1,5 +1,4 @@
-﻿using Prism.Commands;
-using Prism.Navigation;
+﻿using Prism.Navigation;
 
 namespace XamlDemo.ViewModels
 {

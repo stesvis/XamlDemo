@@ -21,8 +21,6 @@
 
 //http://www.johankarlsson.net/2015/09/fontawesome-using-xamarin-forms-and.html?showComment=1514413772955#c1343982429627194368
 
-using System;
-
 namespace XamlDemo.Include
 {
     public class FontAwesome

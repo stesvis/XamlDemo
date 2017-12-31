@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace XamlDemo.Include
 {
@@ -12,12 +9,12 @@ namespace XamlDemo.Include
             typeof(double),
             typeof(CurvedCornersLabel),
             12.0);
+
         public double CurvedCornerRadius
         {
             get { return (double)GetValue(CurvedCornerRadiusProperty); }
             set { SetValue(CurvedCornerRadiusProperty, value); }
         }
-
 
         public static readonly BindableProperty CurvedBackgroundColorProperty =
             BindableProperty.Create(
@@ -25,6 +22,7 @@ namespace XamlDemo.Include
                 typeof(Color),
                 typeof(CurvedCornersLabel),
                 Color.Default);
+
         public Color CurvedBackgroundColor
         {
             get { return (Color)GetValue(CurvedBackgroundColorProperty); }

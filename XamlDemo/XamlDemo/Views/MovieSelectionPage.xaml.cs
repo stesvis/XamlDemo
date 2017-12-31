@@ -2,9 +2,9 @@
 
 namespace XamlDemo.Views
 {
-    public partial class MainPage : ContentPage
+    public partial class MovieSelectionPage : ContentPage
     {
-        public MainPage()
+        public MovieSelectionPage()
         {
             InitializeComponent();
         }
