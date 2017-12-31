@@ -27,7 +27,7 @@ namespace XamlDemo
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("NavigationPage/MovieSelectionPage");
         }
 
         protected override void RegisterTypes()

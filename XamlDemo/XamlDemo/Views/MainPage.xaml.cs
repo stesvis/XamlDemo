@@ -9,12 +9,5 @@ namespace XamlDemo.Views
         {
             InitializeComponent();
         }
-
-        public async void OnButtonClicked(object sender, EventArgs args)
-        {
-            Button button = (Button)sender;
-            Page movieSelectionPage = (Page)Activator.CreateInstance(typeof(MovieSelectionPage));
-            await Navigation.PushAsync(movieSelectionPage);
-        }
     }
 }

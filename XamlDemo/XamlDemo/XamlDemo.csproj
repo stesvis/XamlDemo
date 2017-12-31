@@ -9,10 +9,4 @@
     <PackageReference Include="Prism.Ninject.Forms" Version="7.0.0.168-pre" />
   </ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Views\MovieSelectionPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-
 </Project>
