@@ -19,6 +19,11 @@
                     Grid.Row="1"
                     FontFamily="FontAwesome"></Button>
 
+        <Button Text="Movie Selection Page"
+                    Clicked="OnButtonClicked"
+                    Grid.Row="1"
+                    FontFamily="FontAwesome"></Button> 
+
         <Button Text="&#xf095; Call"
                     Grid.Row="2"
                     FontFamily="FontAwesome"></Button>

@@ -27,14 +27,13 @@ namespace XamlDemo
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MovieSelectionPage");
+            await NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
 
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
-            Container.RegisterTypeForNavigation<MovieSelectionPage>();
         }
     }
 }
