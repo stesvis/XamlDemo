@@ -22,14 +22,14 @@ namespace XamlDemo.ViewModels
         public DelegateCommand<NavMenuItem> ItemTappedCommand =>
             delegateCommand ?? (delegateCommand = new DelegateCommand<NavMenuItem>(ExecuteItemTappedCommand));
 
-        private DelegateCommand<string> _navigateCommand;
-        public DelegateCommand<string> NavigateCommand =>
-            _navigateCommand ?? (_navigateCommand = new DelegateCommand<string>(ExecuteNavigateCommand));
+        //private DelegateCommand<string> _navigateCommand;
+        //public DelegateCommand<string> NavigateCommand =>
+        //    _navigateCommand ?? (_navigateCommand = new DelegateCommand<string>(ExecuteNavigateCommand));
 
-        private async void ExecuteNavigateCommand(string parameter)
-        {
-            await NavigationService.NavigateAsync(parameter);
-        }
+        //private async void ExecuteNavigateCommand(string parameter)
+        //{
+        //    await NavigationService.NavigateAsync(parameter);
+        //}
 
         private void ExecuteItemTappedCommand(NavMenuItem parameter)
         {

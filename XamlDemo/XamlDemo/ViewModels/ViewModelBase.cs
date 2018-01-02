@@ -1,4 +1,5 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Commands;
+using Prism.Mvvm;
 using Prism.Navigation;
 
 namespace XamlDemo.ViewModels
@@ -12,6 +13,15 @@ namespace XamlDemo.ViewModels
         {
             get { return _title; }
             set { SetProperty(ref _title, value); }
+        }
+
+        private DelegateCommand<string> _navigateCommand;
+        public DelegateCommand<string> NavigateCommand =>
+            _navigateCommand ?? (_navigateCommand = new DelegateCommand<string>(ExecuteNavigateCommand));
+
+        private async void ExecuteNavigateCommand(string parameter)
+        {
+            await NavigationService.NavigateAsync(parameter);
         }
 
         public ViewModelBase(INavigationService navigationService)
