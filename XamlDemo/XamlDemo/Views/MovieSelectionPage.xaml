@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamlDemo.Views.MovieSelectionPage"
+    xmlns:control="clr-namespace:XamlDemo.Include" 
+    Title="Movie Selection">
+<ContentPage.Content>
+    <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <Grid RowSpacing="0" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+       <Grid Grid.Row="0" 
+            HeightRequest="250" 
+            HorizontalOptions="FillAndExpand" 
+            VerticalOptions="CenterAndExpand" 
+            BackgroundColor="Blue"
+            >
+            <Image HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill"
+                  Source= "https://t4.ftcdn.net/jpg/01/34/71/05/240_F_134710570_GBX5PSOyL3YVkkVfMvrcbDB1wcNoSWCY.jpg" />
+            <Image HorizontalOptions="Center" 
+                VerticalOptions="Center" 
+                Aspect="AspectFit"
+                HeightRequest="150"
+                WidthRequest="100" 
+                Margin="0,-25,0,0"
+                Source="https://i.ytimg.com/vi/-eYxeRJCYMY/movieposter.jpg"/>
+       </Grid>
+
+       <Grid Grid.Row="2" BackgroundColor="#FFFFFF" 
+            Margin="0,-25,0,0" > 
+            <Grid Padding="10,35,10,20">
+           <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Text="Mad Max: Fury Road" FontAttributes="Bold" FontSize="Large" TextColor="#D41255" />                
+            <Label Grid.Row="1" Text="2015" FontSize="Medium"  Margin="0,5,0,5" TextColor="#585858"/>
+          
+                
+           <control:HorizontalListview Grid.Row="2" Orientation="Horizontal" Padding="0,5,0,5"  x:Name="lstStars" ItemsSource="{Binding RatingStars}" HeightRequest="20">
+           <!-- <control:HorizontalListview.HeightRequest>
+                <OnPlatform x:TypeArguments="x:Double" iOS="20" Android="20" />
+             </control:HorizontalListview.HeightRequest>-->
+            <control:HorizontalListview.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                             <Grid VerticalOptions="FillAndExpand" HeightRequest="20" WidthRequest="20"  
+                                Margin="0,0,0,0">
+                                <Image Source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgMiqZNeLyc5apgGmrKUxW3qkIuPzgXb5NQ9otr1tPTXxfrE8t"/>    
+                               <!-- <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnStarTap" />
+                                </Grid.GestureRecognizers>-->
+                            </Grid>
+
+                    </ViewCell>
+                </DataTemplate>
+            </control:HorizontalListview.ItemTemplate>
+        </control:HorizontalListview>
+
+            <Label Grid.Row="3" FontSize="Small" TextColor="#585858"
+                        Text="A woman rebels against a tyrannical ruler in postapocalyptic Australia in search for her home-land with the help of a group of female prisoners, a psychotic worshipper, and a drifter named Max." />
+
+                       <Grid Grid.Row="4">
+                          <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                             <Frame  Grid.Column="0"
+                       OutlineColor="#4855B1" 
+                       Padding="5,0,5,0"
+                       BackgroundColor ="#4855B1" HasShadow="false"
+                                  VerticalOptions="Center">
+                <Label Text="CAST" TextColor="White" FontSize="Small"/>
+                </Frame>
+                <Label  Grid.Column="1" FontSize="Small" TextColor="#585858"
+                            Text="Tom Hardy, Charlize Theron, Nicholas Hoult"/> 
+                </Grid>
+                        <Grid Grid.Row="5">
+                             <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                             <Frame Grid.Column="0"
+                       OutlineColor="#4855B1" 
+                       Padding="5,0,5,0"
+                       BackgroundColor ="#4855B1"
+                          HasShadow="false" 
+                                VerticalOptions="Center">
+                <Label Text="DIRECTOR" TextColor="White" FontSize="Small"/>
+                </Frame>
+                <Label  Grid.Column="1" Text="George Miller" FontSize="Small"
+                            TextColor="#585858"/> 
+                            </Grid>
+                        
+         
+            <Label  Grid.Row="6" Text="More from Sci-Fi Titles" FontSize="Medium" FontAttributes="Bold" Margin="0,10,0,0"/>
+                
+            <control:HorizontalListview Grid.Row="7" Orientation="Horizontal" Padding="0,7,0,0"  x:Name="lstMovies" ItemsSource="{Binding Movies}" HeightRequest="140">
+            <!--<control:HorizontalListview.HeightRequest>
+                <OnPlatform x:TypeArguments="x:Double" iOS="140" Android="140" />
+             </control:HorizontalListview.HeightRequest>-->
+            <control:HorizontalListview.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                             <Grid VerticalOptions="FillAndExpand" HeightRequest="140" WidthRequest="90"  
+                                Margin="0,5,5,5" BackgroundColor="White">
+                                <Image Source="https://i.ytimg.com/vi/-eYxeRJCYMY/movieposter.jpg"/> 
+                               <!-- <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnMovieTap" />
+                                </Grid.GestureRecognizers>-->
+                            </Grid>
+
+                    </ViewCell>
+                </DataTemplate>
+            </control:HorizontalListview.ItemTemplate>
+        </control:HorizontalListview>
+
+                
+            </Grid>
+       </Grid>
+        
+       <Button 
+        BackgroundColor="#D41255" 
+        TextColor="White"  
+        Text="PLAY MOVIE"
+        Grid.Row="1"
+        HeightRequest="50"
+        Margin="65,-25,65,0"
+        HorizontalOptions="FillAndExpand"
+           FontSize="Medium"    >
+             <!--       <Button.BorderRadius>
+             <OnPlatform x:TypeArguments="x:Int32">
+                    <OnPlatform.iOS>20</OnPlatform.iOS>
+                    <OnPlatform.Android>65</OnPlatform.Android>
+                </OnPlatform>
+                        </Button.BorderRadius>-->
+                </Button>
+
+    </Grid>
+    </ScrollView>
+    </ContentPage.Content>
+   
+</ContentPage>

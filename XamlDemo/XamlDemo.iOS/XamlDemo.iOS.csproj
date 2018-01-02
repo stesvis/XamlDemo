@@ -98,6 +98,7 @@
     <BundleResource Include="Resources\fontawesome.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
+    <Compile Include="Renderers\HorizontalListviewRendererIos.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -129,9 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamlDemo\XamlDemo.csproj">
-      <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
+      <Project>{1A35020D-A12E-4FBF-B19A-DD471594EA3E}</Project>
       <Name>XamlDemo</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Renderers\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

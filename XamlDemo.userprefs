@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{F8017ACA-AF66-4D67-8CCE-B6C1C35B0D7B}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="XamlDemo/XamlDemo/ViewModels/ViewModelBase.cs">
+    <Files>
+      <File FileName="XamlDemo/XamlDemo/Views/MovieSelectionPage.xaml" Line="100" Column="45" />
+      <File FileName="XamlDemo/XamlDemo/Views/MovieSelectionPage.xaml.cs" Line="14" Column="10" />
+      <File FileName="XamlDemo/XamlDemo/ViewModels/MovieSelectionViewModel.cs" Line="16" Column="41" />
+      <File FileName="XamlDemo/XamlDemo/Include/HorizontalListview.cs" Line="6" Column="27" />
+      <File FileName="XamlDemo/XamlDemo/App.xaml.cs" Line="35" Column="67" />
+      <File FileName="XamlDemo/XamlDemo/ViewModels/ViewModelBase.cs" Line="19" Column="50" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.XamlDemo.Android PreferredExecutionTarget="Android.192.168.56.101:5555" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
