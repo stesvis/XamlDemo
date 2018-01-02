@@ -4,7 +4,6 @@ using Xamarin.Forms.Xaml;
 using XamlDemo.Views;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-
 namespace XamlDemo
 {
     public partial class App : PrismApplication
@@ -27,7 +26,16 @@ namespace XamlDemo
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MovieSelectionPage");
+            if (Device.Idiom == TargetIdiom.Desktop || Device.Idiom == TargetIdiom.Tablet)
+            {
+                // Destop or Tablet mode
+            }
+            else
+            {
+                // Phone mode
+            }
+
+            await NavigationService.NavigateAsync("MasterDetailNavPage");
         }
 
         protected override void RegisterTypes()
@@ -35,6 +43,9 @@ namespace XamlDemo
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
             Container.RegisterTypeForNavigation<MovieSelectionPage>();
+            Container.RegisterTypeForNavigation<TimelinePage>();
+            Container.RegisterTypeForNavigation<MasterDetailNavPage>();
+            Container.RegisterTypeForNavigation<MasterPage>();
         }
     }
 }
