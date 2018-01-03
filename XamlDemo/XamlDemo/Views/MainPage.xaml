@@ -19,11 +19,14 @@
                     Grid.Row="1"
                     FontFamily="FontAwesome"></Button>
 
+        <Label Text="{x:Static include:FontAwesome.FAShoppingCart}" FontSize="60" HorizontalOptions="Center" FontFamily="FontAwesome" />
+        <Label Text="&#xf07a;" FontSize="60" HorizontalOptions="Center" FontFamily="FontAwesome" />
+
         <Button Text="&#xf095; Call"
                     Grid.Row="2"
                     FontFamily="FontAwesome"></Button>
 
-        <Label Text="&#xf08b;" FontSize="60" HorizontalOptions="Center" FontFamily="FontAwesome" />
+        <Label Text="{Binding CartIcon}" FontSize="60" HorizontalOptions="Center" FontFamily="FontAwesome" />
     </StackLayout>
 
 </ContentPage>

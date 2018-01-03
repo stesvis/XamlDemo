@@ -4,17 +4,18 @@ namespace XamlDemo.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
-        private string _title;
-        public string Title
+        private string _cartIcon;
+        public string CartIcon
         {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
+            get { return _cartIcon; }
+            set { SetProperty(ref _cartIcon, value); }
         }
 
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
             Title = "Main Page";
+            CartIcon = "&#xf07a;";
         }
     }
 }
