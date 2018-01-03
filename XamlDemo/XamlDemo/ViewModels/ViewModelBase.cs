@@ -21,7 +21,7 @@ namespace XamlDemo.ViewModels
 
         private async void ExecuteNavigateCommand(string parameter)
         {
-            await NavigationService.NavigateAsync(parameter);
+            await NavigationService.NavigateAsync(parameter, null, false);
         }
 
         public ViewModelBase(INavigationService navigationService)
