@@ -36,7 +36,7 @@ namespace XamlDemo
                 // Phone mode
             }
 
-            await NavigationService.NavigateAsync("MasterDetailNavPage");
+            await NavigationService.NavigateAsync("NavigationPage/MasterDetailNavPage");
         }
 
         protected override void RegisterTypes()
