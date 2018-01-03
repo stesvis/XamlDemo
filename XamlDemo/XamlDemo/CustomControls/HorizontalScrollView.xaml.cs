@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,10 +10,10 @@ using Xamarin.Forms.Xaml;
 namespace XamlDemo.CustomControls
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CustomScrollView : ScrollView
+    public partial class HorizontalScrollView : ScrollView
     {
         public static readonly BindableProperty ItemsSourceProperty =
-            BindableProperty.Create("ItemsSource", typeof(IEnumerable), typeof(CustomScrollView), default(IEnumerable),
+            BindableProperty.Create("ItemsSource", typeof(IEnumerable), typeof(HorizontalScrollView), default(IEnumerable),
                                     BindingMode.Default, null, new BindableProperty.BindingPropertyChangedDelegate(HandleBindingPropertyChangedDelegate));
 
         private static object HandleBindingPropertyChangedDelegate(BindableObject bindable, object value)
@@ -31,7 +28,7 @@ namespace XamlDemo.CustomControls
         }
 
         public static readonly BindableProperty ItemTemplateProperty =
-            BindableProperty.Create("ItemTemplate", typeof(DataTemplate), typeof(CustomScrollView), default(DataTemplate));
+            BindableProperty.Create("ItemTemplate", typeof(DataTemplate), typeof(HorizontalScrollView), default(DataTemplate));
 
         public DataTemplate ItemTemplate
         {
@@ -42,7 +39,7 @@ namespace XamlDemo.CustomControls
         public event EventHandler<ItemTappedEventArgs> ItemSelected;
 
         public static readonly BindableProperty SelectedCommandProperty =
-            BindableProperty.Create("SelectedCommand", typeof(ICommand), typeof(CustomScrollView), null);
+            BindableProperty.Create("SelectedCommand", typeof(ICommand), typeof(HorizontalScrollView), null);
 
         public ICommand SelectedCommand
         {
@@ -51,7 +48,7 @@ namespace XamlDemo.CustomControls
         }
 
         public static readonly BindableProperty SelectedCommandParameterProperty =
-            BindableProperty.Create("SelectedCommandParameter", typeof(object), typeof(CustomScrollView), null);
+            BindableProperty.Create("SelectedCommandParameter", typeof(object), typeof(HorizontalScrollView), null);
 
         public object SelectedCommandParameter
         {
@@ -59,36 +56,9 @@ namespace XamlDemo.CustomControls
             set { SetValue(SelectedCommandParameterProperty, value); }
         }
 
-        public CustomScrollView()
+        public HorizontalScrollView()
         {
             InitializeComponent();
-        }
-
-        private static void HandleBindingPropertyChangedDelegate(BindableObject bindable, object oldValue, object newValue)
-        {
-            var isOldObservable = oldValue?.GetType().GetTypeInfo().ImplementedInterfaces.Any(i => i == typeof(INotifyCollectionChanged));
-            var isNewObservable = newValue?.GetType().GetTypeInfo().ImplementedInterfaces.Any(i => i == typeof(INotifyCollectionChanged));
-
-            var scrlViewObj = (CustomScrollView)bindable;
-            if (isOldObservable.GetValueOrDefault(false))
-            {
-                ((INotifyCollectionChanged)oldValue).CollectionChanged -= scrlViewObj.HandleCollectionChanged;
-            }
-
-            if (isNewObservable.GetValueOrDefault(false))
-            {
-                ((INotifyCollectionChanged)newValue).CollectionChanged += scrlViewObj.HandleCollectionChanged;
-            }
-
-            if (oldValue != newValue)
-            {
-                scrlViewObj.Render();
-            }
-        }
-
-        private void HandleCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            Render();
         }
 
         public void Render()
@@ -110,10 +80,12 @@ namespace XamlDemo.CustomControls
                     var args = new ItemTappedEventArgs(ItemsSource, item);
                     ItemSelected?.Invoke(this, args);
                 });
+
                 var commandParameter = SelectedCommandParameter ?? item;
 
                 var viewCell = ItemTemplate.CreateContent() as ViewCell;
                 viewCell.View.BindingContext = item;
+
                 viewCell.View.GestureRecognizers.Add(new TapGestureRecognizer
                 {
                     Command = command,
@@ -123,8 +95,34 @@ namespace XamlDemo.CustomControls
 
                 layout.Children.Add(viewCell.View);
             }
+        }
 
-            Content = layout;
+        private static void HandleBindingPropertyChangedDelegate(BindableObject bindable, object oldValue, object newValue)
+        {
+            var isOldObservable = oldValue?.GetType().GetTypeInfo().ImplementedInterfaces.Any(i => i == typeof(INotifyCollectionChanged));
+            var isNewObservable = newValue?.GetType().GetTypeInfo().ImplementedInterfaces.Any(i => i == typeof(INotifyCollectionChanged));
+
+            var scrollView = bindable as HorizontalScrollView;
+
+            if (isOldObservable.GetValueOrDefault(false))
+            {
+                ((INotifyCollectionChanged)oldValue).CollectionChanged -= scrollView.HandleCollectionChanged;
+            }
+
+            if (isNewObservable.GetValueOrDefault(false))
+            {
+                ((INotifyCollectionChanged)newValue).CollectionChanged += scrollView.HandleCollectionChanged;
+            }
+
+            if (oldValue != newValue)
+            {
+                scrollView.Render();
+            }
+        }
+
+        private void HandleCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            Render();
         }
     }
 }

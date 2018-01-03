@@ -68,9 +68,9 @@
                     </StackLayout>
                     <StackLayout VerticalOptions="StartAndExpand" Padding="20, 20, 10, 0">
                         <Label Text="Actor of the Month" />
-                        <local:CustomScrollView Orientation="Horizontal" HorizontalOptions="StartAndExpand" 
+                        <local:HorizontalScrollView Orientation="Horizontal" HorizontalOptions="StartAndExpand" 
                                                 ItemsSource="{Binding ImageUrls}">
-                            <local:CustomScrollView.ItemTemplate>
+                            <local:HorizontalScrollView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
                                         <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Padding="0,0,0,10">
@@ -80,8 +80,8 @@
                                         </StackLayout>
                                     </ViewCell>
                                 </DataTemplate>
-                            </local:CustomScrollView.ItemTemplate>
-                        </local:CustomScrollView>
+                            </local:HorizontalScrollView.ItemTemplate>
+                        </local:HorizontalScrollView>
                     </StackLayout>
                 </StackLayout>
             </ScrollView>

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using Prism.Mvvm;
+﻿using System.Collections.ObjectModel;
 using Prism.Navigation;
 using XamlDemo.Include;
 

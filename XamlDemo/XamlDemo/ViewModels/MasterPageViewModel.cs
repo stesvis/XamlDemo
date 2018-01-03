@@ -1,10 +1,6 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using System.Collections.ObjectModel;
+using Prism.Commands;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using Xamarin.Forms;
 
 namespace XamlDemo.ViewModels
