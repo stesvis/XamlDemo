@@ -16,17 +16,17 @@
             <Label Text="Reviews" />
         </StackLayout>
 
-        <Label Text="&#xf11d;&#xf11d; Welcome to Xamarin Forms and Prism!" FontFamily="FontAwesome" />
+        <Label Text="&#xf11d; Welcome to Xamarin Forms and Prism! &#xf11d;" FontFamily="FontAwesome" />
 
         <Button Text="{Binding BtnHomeTitle}"
-                    Grid.Row="1"
                     FontFamily="FontAwesome"></Button>
 
-        <Button Text="{Binding BtnCallTitle}"
-                    Grid.Row="2"
+        <Button Text="{x:Static include:FontAwesome.FAHome}"
                     FontFamily="FontAwesome"></Button>
 
         <Label Text="{Binding Signout}" FontSize="60" HorizontalOptions="Center" FontFamily="FontAwesome" />
+
+        <Label Text="{x:Static include:FontAwesome.FASignOut}" FontSize="60" HorizontalOptions="Center" FontFamily="FontAwesome" />
     </StackLayout>
 
 </ContentPage>
