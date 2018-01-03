@@ -1,34 +1,41 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Prism.Mvvm;
+using Prism.Navigation;
 
 namespace XamlDemo.ViewModels
 {
-    public class MovieSelectionPageViewModel : BindableBase
+    public class MovieSelectionPageViewModel : ViewModelBase
     {
-        private IEnumerable<string> _castList;
-        public IEnumerable<string> CastList
+        private ObservableCollection<string> _castList;
+        public ObservableCollection<string> CastList
         {
             get { return _castList; }
             set { SetProperty(ref _castList, value); }
         }
 
-        private IEnumerable<string> _imageUrls;
-        public IEnumerable<string> ImageUrls
+        public string Cast { get; set; }
+
+        private ObservableCollection<string> _imageUrls;
+        public ObservableCollection<string> ImageUrls
         {
             get { return _imageUrls; }
             set { SetProperty(ref _imageUrls, value); }
         }
 
-        public MovieSelectionPageViewModel()
+        public MovieSelectionPageViewModel(INavigationService navigationService)
+            : base(navigationService)
         {
-            CastList = new List<string>
+            CastList = new ObservableCollection<string>
             {
                 "Jeff Bridges",
                 "Garrett Hedlund",
                 "Olivia Wilde"
             };
 
-            ImageUrls = new List<string>
+            Cast = string.Join(", ", CastList);
+
+            ImageUrls = new ObservableCollection<string>
             {
                 "https://upload.wikimedia.org/wikipedia/commons/e/e6/Jackie_Chan_Cannes_2012.jpg",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Burt_Lancaster_-_publicity_1947.JPG/627px-Burt_Lancaster_-_publicity_1947.JPG",

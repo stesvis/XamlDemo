@@ -3,6 +3,88 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="XamlDemo.Views.MovieSelectionPage">
-  
+             xmlns:local="clr-namespace:XamlDemo.CustomControls"
+             x:Class="XamlDemo.Views.MovieSelectionPage"
+             Title="Movie Selection">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
+                <StackLayout  VerticalOptions="StartAndExpand">
+                    <RelativeLayout>
+                        <BoxView Color="Gray" 
+                                 HeightRequest="150" 
+                                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+                        <Image Source="https://upload.wikimedia.org/wikipedia/commons/e/e6/Jackie_Chan_Cannes_2012.jpg" 
+                               HeightRequest="100" 
+                               WidthRequest="70" 
+                               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.5, Constant=-35}" 
+                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=-.5, Constant=100}"/>
+                        <Button BorderRadius="35" 
+                                Text="Play Movie" 
+                                TextColor="White" 
+                                FontSize="Default" 
+                                BackgroundColor="Maroon" 
+                                HeightRequest="40"
+                                WidthRequest="150"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.5, Constant = -75}" 
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=0, Property=Y, Constant=130}" />
+                    </RelativeLayout>
+                    <StackLayout  VerticalOptions="StartAndExpand" Padding="20,20,20,0">
+                        <Label Text="TRON: Legacy" FontAttributes="Bold" FontSize="Medium" />
+                        <Label Text="2010" FontAttributes="Bold" />
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Padding="0, 0, 0, 20">
+                            <Label Text="&#xf005;" TextColor="#fde10a" />
+                            <Label Text="&#xf005;" TextColor="#fde10a" />
+                            <Label Text="&#xf005;" TextColor="#fde10a" />
+                            <Label Text="&#xf005;" TextColor="#fde10a" />
+                            <Label Text="&#xf005;" />
+                        </StackLayout>
+                        <Label Text="The son of a virtual world designer goes looking for his father and ends up inside the digital world that his father designed. He meets his father's corrupted creation and a unique ally who was born inside the digital world." 
+                               LineBreakMode="WordWrap" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                            <local:CurvedCornersLabel Text="CAST: " 
+                                                      HorizontalTextAlignment="Center" 
+                                                      VerticalTextAlignment="Center"  
+                                                      MinimumWidthRequest="100" 
+                                                      CurvedBackgroundColor="#0040ff" 
+                                                      TextColor="White" 
+                                                      CurvedCornerRadius="2">
+                            </local:CurvedCornersLabel>
+
+                            <Label Text="{Binding Cast}" VerticalTextAlignment="Center" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                            <local:CurvedCornersLabel Text="DIRECTOR: " 
+                                                      HorizontalTextAlignment="Center" 
+                                                      VerticalTextAlignment="Start"  
+                                                      MinimumWidthRequest="170" 
+                                                      CurvedBackgroundColor="#0040ff" 
+                                                      TextColor="White" 
+                                                      CurvedCornerRadius="2">
+                            </local:CurvedCornersLabel>
+                            <Label Text="Joseph Kosinski" VerticalTextAlignment="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="StartAndExpand" Padding="20, 20, 10, 0">
+                        <Label Text="Actor of the Month" />
+                        <local:CustomScrollView Orientation="Horizontal" HorizontalOptions="StartAndExpand" 
+                                                ItemsSource="{Binding ImageUrls}">
+                            <local:CustomScrollView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Padding="0,0,0,10">
+                                            <Image Source="{Binding}" 
+                                                   HeightRequest="120" 
+                                                   WidthRequest="84"/>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </local:CustomScrollView.ItemTemplate>
+                        </local:CustomScrollView>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

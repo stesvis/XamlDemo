@@ -4,6 +4,7 @@ using Xamarin.Forms.Xaml;
 using XamlDemo.Views;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+
 namespace XamlDemo
 {
     public partial class App : PrismApplication

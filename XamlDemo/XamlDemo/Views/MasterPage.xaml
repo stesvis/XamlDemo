@@ -17,7 +17,7 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="#333333">
             <Button Text="Movie Selection" Command="{Binding NavigateCommand}" CommandParameter="MasterDetailNavPage/MovieSelectionPage"></Button>
-            <ListView SeparatorVisibility="None"
+            <!--<ListView SeparatorVisibility="None"
                       ItemsSource="{Binding MenuItems}"
                       BackgroundColor="#333333">
                 
@@ -70,7 +70,7 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
         </StackLayout>
 
     </ContentPage.Content>
