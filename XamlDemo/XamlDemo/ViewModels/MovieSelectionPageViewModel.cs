@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using Prism.Mvvm;
 using Prism.Navigation;
+using XamlDemo.Include;
 
 namespace XamlDemo.ViewModels
 {
@@ -13,6 +14,8 @@ namespace XamlDemo.ViewModels
             get { return _castList; }
             set { SetProperty(ref _castList, value); }
         }
+
+        public string Star { get; set; }
 
         public string Cast { get; set; }
 
@@ -32,6 +35,8 @@ namespace XamlDemo.ViewModels
                 "Garrett Hedlund",
                 "Olivia Wilde"
             };
+
+            Star = FontAwesome.FAStar;
 
             Cast = string.Join(", ", CastList);
 

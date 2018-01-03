@@ -34,11 +34,11 @@
                         <Label Text="2010" FontAttributes="Bold" />
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Padding="0, 0, 0, 20">
-                            <Label Text="&#xf005;" TextColor="#fde10a" />
-                            <Label Text="&#xf005;" TextColor="#fde10a" />
-                            <Label Text="&#xf005;" TextColor="#fde10a" />
-                            <Label Text="&#xf005;" TextColor="#fde10a" />
-                            <Label Text="&#xf005;" />
+                            <Label Text="{Binding Star}" TextColor="#fde10a" />
+                            <Label Text="{Binding Star}" TextColor="#fde10a" />
+                            <Label Text="{Binding Star}" TextColor="#fde10a" />
+                            <Label Text="{Binding Star}" TextColor="#fde10a" />
+                            <Label Text="{Binding Star}" />
                         </StackLayout>
                         <Label Text="The son of a virtual world designer goes looking for his father and ends up inside the digital world that his father designed. He meets his father's corrupted creation and a unique ally who was born inside the digital world." 
                                LineBreakMode="WordWrap" />

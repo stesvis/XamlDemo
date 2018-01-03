@@ -1,32 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
              xmlns:include="clr-namespace:XamlDemo.Include"
              x:Class="XamlDemo.Views.MainPage"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             NavigationPage.HasNavigationBar="False">
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Label Text="&#xf005;" TextColor="#fde10a" FontFamily="FontAwesome" />
-            <Label Text="&#xf005;" TextColor="#fde10a" FontFamily="FontAwesome" />
-            <Label Text="&#xf005;" FontFamily="FontAwesome" />
+            <Label Text="{Binding Star}" TextColor="#fde10a" FontFamily="FontAwesome" />
+            <Label Text="{Binding Star}" TextColor="#fde10a" FontFamily="FontAwesome" />
+            <Label Text="{Binding Star}" FontFamily="FontAwesome" />
             <Label Text="Reviews" />
         </StackLayout>
 
         <Label Text="&#xf11d;&#xf11d; Welcome to Xamarin Forms and Prism!" FontFamily="FontAwesome" />
 
-        <Button Text="{x:Static include:FontAwesome.FAHome}"
+        <Button Text="{Binding BtnHomeTitle}"
                     Grid.Row="1"
                     FontFamily="FontAwesome"></Button>
 
-        <Label Text="{x:Static include:FontAwesome.FAShoppingCart}" FontSize="60" HorizontalOptions="Center" FontFamily="FontAwesome" />
-        <Label Text="&#xf07a;" FontSize="60" HorizontalOptions="Center" FontFamily="FontAwesome" />
-
-        <Button Text="&#xf095; Call"
+        <Button Text="{Binding BtnCallTitle}"
                     Grid.Row="2"
                     FontFamily="FontAwesome"></Button>
 
-        <Label Text="{Binding CartIcon}" FontSize="60" HorizontalOptions="Center" FontFamily="FontAwesome" />
+        <Label Text="{Binding Signout}" FontSize="60" HorizontalOptions="Center" FontFamily="FontAwesome" />
     </StackLayout>
 
 </ContentPage>

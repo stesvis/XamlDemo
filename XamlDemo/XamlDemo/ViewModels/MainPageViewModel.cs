@@ -1,21 +1,34 @@
 ﻿using Prism.Navigation;
+using XamlDemo.Include;
 
 namespace XamlDemo.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
-        private string _cartIcon;
-        public string CartIcon
+        private string _title;
+        public string Title
         {
-            get { return _cartIcon; }
-            set { SetProperty(ref _cartIcon, value); }
+            get { return _title; }
+            set { SetProperty(ref _title, value); }
         }
+
+        public string Star { get; set; }
+
+        public string BtnHomeTitle { get; set; }
+
+        public string BtnCallTitle { get; set; }
+
+        public string Signout { get; set; }
 
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
             Title = "Main Page";
-            CartIcon = "&#xf07a;";
+
+            Star = FontAwesome.FAStar;
+            BtnHomeTitle = FontAwesome.FAHome;
+            BtnCallTitle = string.Concat(FontAwesome.FAPhone, " Call");
+            Signout = FontAwesome.FASignOut;
         }
     }
 }
