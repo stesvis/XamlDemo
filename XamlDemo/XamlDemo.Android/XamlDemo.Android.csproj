@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Renderers\CurvedCornersLabelRenderer.cs" />
+    <Compile Include="Renderers\CustomScrollViewRenderer.cs" />
     <Compile Include="Renderers\FontAwesomeButtonRenderer.cs" />
     <Compile Include="Renderers\FontAwesomeLabelRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
